@@ -1,0 +1,40 @@
+id = "enchantment_descriptions"
+name = "Enchantment Descriptions"
+version = "1.0.1"
+description = """Exact 1:1 Rust translation of [Enchantment Descriptions](https://github.com/Darkhax-Minecraft/Enchantment-Descriptions)
+(upstream Java, LGPL-2.1-only (c) Darkhax). Carries the upstream license and credit.
+
+Ported for the Horizon client by sparticle.
+
+A short description line right under each enchantment on the hovered item's
+tooltip. The whole flow rides the mod API's item_tooltip hook (the finished
+tooltip with mutable lines): four of the five config entries register as
+settings with upstream's defaults (enableMod, onlyDisplayOnBooks,
+requireKeybindPress, indentSize), the config file stays config/enchdesc.json
+in the original's camelCase and pretty printing, and the descriptions ship as
+the original's en_us lang file and resolve through the game's lang layer.
+
+Known seams (tracked, see README):
+- the enchantment name lines are matched by their resolved text and the
+  game's own name colors (upstream matches the name component's key);
+- onlyDisplayInEnchantingTable stays file-held: the mod API has no
+  current-screen query to enforce it.
+
+Pinned to Horizon f00125f61f794aaa3d4e950d301f353b35b6ee3d and
+horizon-mixins e59da9094f0c2fdda6c627fe9eff22dec6a906f0, mod api 0.2; exact
+1:1 Rust port tested against those revisions.
+
+Licence: LGPL-2.1-only (LICENSE carries the upstream text). Source:
+https://github.com/Sparticle62ops/horizon-enchantment-descriptions
+"""
+authors = ["Darkhax", "sparticle"]
+license = "LGPL-2.1-only"
+homepage = "https://github.com/Sparticle62ops/horizon-enchantment-descriptions"
+api = "0.2"
+side = "client"
+capabilities = []
+
+[native]
+game = "26.3"
+horizon = "f00125f61f794aaa3d4e950d301f353b35b6ee3d"
+mixins = "e59da9094f0c2fdda6c627fe9eff22dec6a906f0"

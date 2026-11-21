@@ -1,0 +1,17 @@
+[package]
+name = "horizon-mod-enchantment-descriptions"
+version = "1.0.1"
+edition = "2024"
+license = "LGPL-2.1-only"
+publish = false
+description = "A short description right under each enchantment on the hovered item's tooltip: an exact 1:1 Rust port of Enchantment Descriptions."
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+horizon-core = { path = ".horizon/sdk/api/crates/horizon-core" }
+
+horizon-mod-api = { path = ".horizon/sdk/api/crates/horizon-mod-api" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
